@@ -219,6 +219,8 @@ It does not automatically switch the install phase to `bun install`.
 
 For this repo, prefer explicit Cloudflare build settings:
 
+- build environment variable: `BUN_VERSION=latest`
+- build environment variable: `SKIP_DEPENDENCY_INSTALL=1`
 - install command: `bun install`
 - build command: `bun run build`
 
