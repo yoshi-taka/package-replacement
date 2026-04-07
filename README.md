@@ -197,19 +197,19 @@ exists, which looks like a code failure even though it is just an execution-orde
 
 ## Cloudflare Publishing
 
-This site is configured for static deployment on Cloudflare.
+This site is configured for static deployment on Cloudflare Pages.
 
 - production URL: `https://package-replacement.veritycost.com`
 - build command: `bun run build`
 - output directory: `dist/`
-- runtime config: [wrangler.toml](/Users/as/var/localrepos/package-replacement/wrangler.toml)
+- Pages config: [wrangler.toml](/Users/as/var/localrepos/package-replacement/wrangler.toml)
 
 Two deployment modes are expected:
 
-- Cloudflare GitHub integration / Workers Builds
-- local `bun run deploy:cloudflare` after authenticating Wrangler
+- Cloudflare GitHub integration / Pages build
+- local Wrangler usage if you later choose to deploy outside the GitHub integration
 
-The current setup is intentionally minimal and static-only.
+The current setup is intentionally minimal, static-only, and aligned to Pages.
 
 For Cloudflare-hosted builds, set `BUN_VERSION=latest` in the Cloudflare build
 environment unless you decide to pin Bun explicitly later.
