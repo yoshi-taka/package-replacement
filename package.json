@@ -16,6 +16,7 @@
     "fmt:check": "oxfmt --check src/lib src/types scripts tests snippets *.json *.md"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
     "astro": "^6.1.4"
   },
   "devDependencies": {
