@@ -211,6 +211,9 @@ Two deployment modes are expected:
 
 The current setup is intentionally minimal and static-only.
 
+For Cloudflare-hosted builds, set `BUN_VERSION=latest` in the Cloudflare build
+environment unless you decide to pin Bun explicitly later.
+
 ## Status
 
 This is an MVP exploration.
