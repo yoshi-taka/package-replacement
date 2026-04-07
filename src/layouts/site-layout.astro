@@ -5,6 +5,9 @@ interface Props {
 }
 
 const { title, description = "Own the behavior you depend on." } = Astro.props;
+const site = "https://package-replacement.veritycost.com";
+const image = `${site}/og-image.svg`;
+const canonical = new URL(Astro.url.pathname, site).toString();
 ---
 
 <!doctype html>
@@ -14,6 +17,17 @@ const { title, description = "Own the behavior you depend on." } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content="Package Replacement" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
     <style is:global>
       :root {
         --bg: #f5f0e8;
@@ -43,6 +57,20 @@ const { title, description = "Own the behavior you depend on." } = Astro.props;
       body {
         margin: 0;
         min-height: 100vh;
+      }
+
+      .github-corner {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: inline-flex;
+        z-index: 40;
+      }
+
+      .github-corner img {
+        display: block;
+        width: 80px;
+        height: 80px;
       }
 
       a {
@@ -114,6 +142,15 @@ const { title, description = "Own the behavior you depend on." } = Astro.props;
     </style>
   </head>
   <body>
+    <a
+      class="github-corner"
+      href="https://github.com/yoshi-taka/package-replacement"
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label="View source on GitHub"
+    >
+      <img src="/github-corner-right.svg" alt="" />
+    </a>
     <div class="shell">
       <slot />
     </div>

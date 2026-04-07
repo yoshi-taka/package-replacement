@@ -1,0 +1,33 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F3EC" />
+      <stop offset="1" stop-color="#F1E8DB" />
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(220 110) rotate(38) scale(300 220)">
+      <stop stop-color="#BF5A36" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#BF5A36" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1020 80) rotate(160) scale(260 180)">
+      <stop stop-color="#747F5F" stop-opacity="0.18" />
+      <stop offset="1" stop-color="#747F5F" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glowA)" />
+  <rect width="1200" height="630" fill="url(#glowB)" />
+
+  <rect x="54" y="54" width="1092" height="522" rx="28" fill="#FFFAF2" fill-opacity="0.84" stroke="rgba(31,29,25,0.14)" />
+
+  <text x="94" y="126" fill="#6B6458" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="2">A COPY-PASTE REGISTRY FOR NPM DEPENDENCIES</text>
+  <text x="94" y="258" fill="#1F1D19" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="700">Preserve behavior,</text>
+  <text x="94" y="352" fill="#1F1D19" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="700">not packages.</text>
+
+  <text x="94" y="442" fill="#6B6458" font-family="Georgia, 'Times New Roman', serif" font-size="32">
+    Read the code. Copy only what you need. Keep it in your repo.
+  </text>
+
+  <rect x="94" y="486" width="312" height="56" rx="28" fill="#1F1D19" />
+  <text x="124" y="522" fill="#FFF8F1" font-family="Georgia, 'Times New Roman', serif" font-size="28">package-replacement</text>
+</svg>
