@@ -1,0 +1,49 @@
+{
+  "name": "hasSymbols",
+  "slug": "has-symbols",
+  "status": "vendored",
+  "description": "The published has-symbols package as a vendorable file. Useful when you want the exact symbol support probe locally without keeping the npm dependency.",
+  "tagline": "Detect real Symbol support across runtimes.",
+  "sourcePackage": "has-symbols",
+  "sourceVersion": "1.1.0",
+  "sourcePublishedAt": "2024-12-02T16:34:17.679Z",
+  "sourceRef": "npm:has-symbols@1.1.0",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/has-symbols",
+  "repositoryUrl": "https://github.com/inspect-js/has-symbols",
+  "suggestedFilename": "hasSymbols.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published has-symbols file in both raw and normalized forms. The value is to keep a tiny, inspectable symbol support probe local instead of carrying another npm dependency.",
+  "nativeAlternative": "There is no direct native helper that replaces the package's exact feature probe contract.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape.",
+  "supportLinks": [
+    {
+      "label": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/ljharb"
+    }
+  ]
+}

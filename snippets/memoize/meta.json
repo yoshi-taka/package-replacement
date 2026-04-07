@@ -1,0 +1,44 @@
+{
+  "name": "memoize",
+  "slug": "memoize",
+  "status": "vendored",
+  "category": "Function",
+  "description": "The standalone lodash.memoize package as a vendorable file. Useful when you want the exact lodash memoization contract in your repo without an npm dependency.",
+  "tagline": "Cache function results with lodash semantics.",
+  "sourcePackage": "lodash.memoize",
+  "sourceVersion": "4.1.2",
+  "sourcePublishedAt": "2016-08-13T17:42:08.922Z",
+  "sourceRef": "npm:lodash.memoize@4.1.2",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.memoize",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "memoize.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.memoize file in both raw and normalized forms. The value is not a shorter cache helper. The value is to keep lodash's memoization semantics local and inspectable.",
+  "nativeAlternative": "Map and WeakMap help build memoization, but they do not automatically preserve lodash's exact cache and resolver behavior.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

@@ -1,0 +1,26 @@
+{
+  "name": "package-replacement",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy:cloudflare": "bunx wrangler@4 deploy",
+    "normalize:snippet": "bun scripts/normalize-snippet.mjs",
+    "extract:lodash-entry": "bun scripts/extract-lodash-entry.mjs",
+    "test": "bun test",
+    "lint": "oxlint scripts tests snippets src/lib src/types",
+    "fmt": "oxfmt src/lib src/types scripts tests snippets *.json *.md",
+    "fmt:check": "oxfmt --check src/lib src/types scripts tests snippets *.json *.md"
+  },
+  "dependencies": {
+    "astro": "^6.1.4"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.43.0",
+    "oxlint": "^1.59.0",
+    "recast": "^0.23.11"
+  }
+}

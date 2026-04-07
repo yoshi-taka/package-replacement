@@ -1,0 +1,54 @@
+{
+  "name": "objectAssign",
+  "slug": "object.assign",
+  "status": "extracted",
+  "description": "A vendorable Object.assign polyfill bundle based on the current object.assign package logic, with helper packages folded into one file for Node.js and Bun use.",
+  "tagline": "Object.assign shim with symbol-aware copy semantics.",
+  "sourcePackage": "object.assign",
+  "sourceVersion": "4.1.7",
+  "sourcePublishedAt": "2024-12-18T20:54:22.882Z",
+  "sourceRef": "npm:object.assign@4.1.7",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/object.assign",
+  "repositoryUrl": "https://github.com/ljharb/object.assign",
+  "suggestedFilename": "objectAssign.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships an Object.assign polyfill bundle based on the current package line, with helper packages folded into a single vendorable file. The value is to keep assign semantics local without carrying a larger helper graph.",
+  "nativeAlternative": "Object.assign exists in modern runtimes, but teams cleaning up old compatibility helpers may still want a vendorable shim with the familiar export shape.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": [
+        "module.exports-to-export-default",
+        "js-extension-to-ts-extension",
+        "bundled-upstream-helper"
+      ],
+      "note": "Bundled into one file and then rule-based normalized for copy-paste into modern TS projects."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Single-file CommonJS bundle preserving the package's bound export shape and helper methods."
+    }
+  ],
+  "sourceEntry": "index.js",
+  "note": "Current object.assign releases depend on multiple helper packages. This snippet folds those helpers into one vendorable file for a practical first pass.",
+  "supportLinks": [
+    {
+      "label": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/ljharb"
+    }
+  ]
+}

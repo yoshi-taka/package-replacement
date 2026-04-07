@@ -1,0 +1,48 @@
+{
+  "name": "decode (from jsonwebtoken)",
+  "slug": "jsonwebtoken-decode",
+  "status": "extracted",
+  "description": "A vendorable decode-only bundle extracted from jsonwebtoken and jws. Useful when you only inspect JWT payloads locally and do not want the full package or its broader dependency graph.",
+  "tagline": "Decode JWT payloads without verify or sign logic.",
+  "sourcePackage": "jsonwebtoken",
+  "sourceVersion": "9.0.2",
+  "sourcePublishedAt": "2023-08-30T12:30:13.196Z",
+  "sourceRef": "npm:jsonwebtoken@9.0.2",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/jsonwebtoken",
+  "repositoryUrl": "https://github.com/auth0/node-jsonwebtoken",
+  "suggestedFilename": "decodeJwt.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships a decode-only bundle cut from jsonwebtoken and jws. The point is to keep the common payload-inspection path local without vendoring sign, verify, crypto, or the full dependency graph.",
+  "nativeAlternative": "There is no direct native JWT decode helper. The built-in Buffer API can decode token segments, but this snippet preserves jsonwebtoken's decode contract and complete-option behavior.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": [
+        "module.exports-to-export-default",
+        "js-extension-to-ts-extension",
+        "bundled-upstream-helper"
+      ],
+      "note": "Decode-only bundle normalized for copy-paste into modern TS projects. It intentionally excludes verify and sign behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Single-file CommonJS bundle preserving jsonwebtoken decode behavior only."
+    }
+  ],
+  "sourceEntry": "decode.js",
+  "note": "This snippet only decodes and parses JWT contents. It does not verify signatures, enforce claims, or make security decisions safe by itself."
+}

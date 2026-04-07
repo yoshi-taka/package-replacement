@@ -1,0 +1,55 @@
+{
+  "name": "stripAnsi",
+  "slug": "strip-ansi",
+  "status": "extracted",
+  "description": "A vendorable bundle of strip-ansi with ansi-regex inlined. Useful when you want the package behavior locally without carrying the dependency pair in your app.",
+  "tagline": "Remove ANSI escape sequences from terminal output.",
+  "sourcePackage": "strip-ansi",
+  "sourceVersion": "7.1.2",
+  "sourcePublishedAt": "2025-09-08T15:05:29.146Z",
+  "sourceRef": "npm:strip-ansi@7.1.2",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/strip-ansi",
+  "repositoryUrl": "https://github.com/chalk/strip-ansi",
+  "suggestedFilename": "stripAnsi.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships a source-faithful strip-ansi bundle with ansi-regex inlined. The point is to keep a tiny, inspectable ANSI stripping helper in your repo without installing both packages.",
+  "nativeAlternative": "Node.js offers util.stripVTControlCharacters, but teams may still want a vendorable cross-runtime helper with fixed behavior in local code.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": [
+        "bundled-upstream-dependency",
+        "js-extension-to-ts-extension",
+        "dts-signature-to-ts-annotation"
+      ],
+      "note": "Source-faithful bundle with upstream TypeScript signature folded in for copy-paste into modern TS projects."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "esm",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Source-faithful extracted bundle from strip-ansi with its ansi-regex dependency inlined into a single ESM file."
+    }
+  ],
+  "sourceEntry": "index.js",
+  "extractedHelpersCount": 1,
+  "note": "This snippet is extracted rather than copied as-is because the published strip-ansi file imports ansi-regex.",
+  "supportLinks": [
+    {
+      "label": "GitHub Sponsors",
+      "url": "https://github.com/chalk/strip-ansi?sponsor=1"
+    }
+  ]
+}

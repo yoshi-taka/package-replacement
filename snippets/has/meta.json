@@ -1,0 +1,44 @@
+{
+  "name": "has",
+  "slug": "has",
+  "status": "vendored",
+  "category": "Path",
+  "description": "The standalone lodash.has package as a vendorable file. Useful when you want lodash-style deep property existence checks without an npm dependency.",
+  "tagline": "Check whether a deep path exists.",
+  "sourcePackage": "lodash.has",
+  "sourceVersion": "4.5.2",
+  "sourcePublishedAt": "2016-08-13T17:39:35.862Z",
+  "sourceRef": "npm:lodash.has@4.5.2",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.has",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "has.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.has file in both raw and normalized forms. The value is to vendor a known path-existence contract instead of rewriting the check by hand.",
+  "nativeAlternative": "Optional chaining can help with reads, but path existence with dynamic segments and lodash-style semantics is not always a one-line native replacement.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

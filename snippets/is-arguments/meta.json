@@ -1,0 +1,49 @@
+{
+  "name": "isArguments",
+  "slug": "is-arguments",
+  "status": "vendored",
+  "description": "The published dependency-free is-arguments package as a vendorable file. Useful when you want the classic arguments-object check locally without keeping the npm dependency.",
+  "tagline": "Detect arguments objects across standard and legacy shapes.",
+  "sourcePackage": "is-arguments",
+  "sourceVersion": "1.0.4",
+  "sourcePublishedAt": "2018-11-06T07:17:49.780Z",
+  "sourceRef": "npm:is-arguments@1.0.4",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/is-arguments",
+  "repositoryUrl": "https://github.com/inspect-js/is-arguments",
+  "suggestedFilename": "isArguments.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the dependency-free is-arguments file in both raw and normalized forms. The value is to keep the classic arguments-object check local and inspectable without another dependency.",
+  "nativeAlternative": "There is no direct native helper for the package's exact arguments-object detection contract.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is from the dependency-free release line."
+    }
+  ],
+  "note": "Current is-arguments releases pull in helper packages. This snippet intentionally uses the simpler 1.0.4 release line as a vendorable first pass.",
+  "supportLinks": [
+    {
+      "label": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/ljharb"
+    }
+  ]
+}

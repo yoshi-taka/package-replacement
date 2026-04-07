@@ -1,0 +1,87 @@
+---
+import MetaPanel from "@/components/meta-panel.astro";
+import SnippetCode from "@/components/snippet-code.astro";
+import SiteLayout from "@/layouts/site-layout.astro";
+import { getAllSnippets, getSnippetBySlug } from "@/lib/snippets";
+
+export async function getStaticPaths() {
+    const snippets = await getAllSnippets();
+    return snippets.map((snippet) => ({
+        params: { slug: snippet.slug },
+    }));
+}
+
+const { slug } = Astro.params;
+const snippet = slug ? await getSnippetBySlug(slug) : undefined;
+
+if (!snippet) {
+    return Astro.redirect("/");
+}
+---
+
+<SiteLayout
+    title={`${snippet.name} | Package Replacement`}
+    description={snippet.description}
+>
+    <a class="eyebrow" href="/">Back</a>
+
+    <section class="card" style="padding:28px; margin-top:18px;">
+        <div style="display:grid; gap:18px;">
+            <div style="display:flex; flex-wrap:wrap; gap:12px;">
+                <div class="eyebrow">{snippet.status}</div>
+                <div class="eyebrow">{snippet.sourcePackage}</div>
+                <div class="eyebrow">v{snippet.sourceVersion}</div>
+                <div class="eyebrow">{snippet.license}</div>
+            </div>
+            <div style="display:grid; gap:10px;">
+                <h1 style="margin:0; font-size:clamp(2.2rem, 5vw, 4.2rem);">
+                    {snippet.name}
+                </h1>
+                <p style="margin:0; max-width:52rem; line-height:1.75;">
+                    {snippet.description}
+                </p>
+            </div>
+            <div
+                class="card"
+                style="padding:18px; background:var(--accent-soft); border-color:rgba(191, 90, 54, 0.18);"
+            >
+                <div
+                    class="muted"
+                    style="font-size:0.82rem; text-transform:uppercase; letter-spacing:0.08em;"
+                >
+                    Why copy this?
+                </div>
+                <p style="margin:8px 0 0; line-height:1.75;">
+                    {snippet.summary}
+                </p>
+                <p style="margin:10px 0 0; line-height:1.75;">
+                    <strong>Native alternative:</strong>
+                    {snippet.nativeAlternative}
+                </p>
+                {
+                    snippet.note && (
+                        <p style="margin:10px 0 0; line-height:1.75;">
+                            <strong>Note:</strong> {snippet.note}
+                        </p>
+                    )
+                }
+                <p class="muted" style="margin:10px 0 0; line-height:1.75;">
+                    This copy is your responsibility once you adopt it. It does not
+                    automatically receive upstream bug fixes or security updates.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section
+        class="grid"
+        style="grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.9fr); align-items:start; margin-top:24px;"
+    >
+        <SnippetCode
+            variants={snippet.variants}
+            defaultVariant={snippet.defaultVariant}
+            codeIdPrefix={`code-${snippet.slug}`}
+        />
+        <MetaPanel meta={snippet} />
+    </section>
+</SiteLayout>

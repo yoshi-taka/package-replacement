@@ -1,0 +1,45 @@
+{
+  "name": "flattenDepth (from lodash)",
+  "slug": "flattendepth",
+  "status": "extracted",
+  "description": "A source-faithful extracted bundle of lodash's flattenDepth method and its required helpers, cut from the full lodash package because the standalone lodash.flattendepth package does not close over all of its dependencies by itself.",
+  "tagline": "Extract lodash flattenDepth from the monolith with helpers included.",
+  "sourcePackage": "lodash",
+  "sourceVersion": "4.17.21",
+  "sourcePublishedAt": "2021-02-20T15:42:16.891Z",
+  "sourceRef": "npm:lodash@4.17.21",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "flattenDepth.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships an extracted bundle from the full lodash package. The point is not to use the standalone lodash.flattendepth package, but to keep a working, vendorable flattenDepth behavior with its helper chain included.",
+  "nativeAlternative": "Array.prototype.flat is close, but vendoring the existing helper can be simpler when you want to preserve current behavior and call sites.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization after extraction. The extraction defines the raw bundle; normalization only changes the packaging shape."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Source-faithful extracted bundle from the lodash package, with local helper modules inlined and module boundaries removed."
+    }
+  ],
+  "sourceEntry": "flattenDepth.js",
+  "extractedHelpersCount": 20,
+  "note": "This snippet is extracted from the lodash monolith because the standalone lodash.flattendepth package still reaches into an external helper package."
+}

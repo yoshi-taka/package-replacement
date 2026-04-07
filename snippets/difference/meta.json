@@ -1,0 +1,44 @@
+{
+  "name": "difference",
+  "slug": "difference",
+  "status": "vendored",
+  "category": "Collection",
+  "description": "The standalone lodash.difference package as a vendorable file. Useful when you want lodash's array difference behavior without another dependency.",
+  "tagline": "Keep values that are not in the excluded array.",
+  "sourcePackage": "lodash.difference",
+  "sourceVersion": "4.5.0",
+  "sourcePublishedAt": "2016-08-13T17:38:01.190Z",
+  "sourceRef": "npm:lodash.difference@4.5.0",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.difference",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "difference.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.difference file in both raw and normalized forms. The value is to preserve the known array-difference behavior already used in your codebase.",
+  "nativeAlternative": "filter plus includes can emulate many cases, but teams may still want the established lodash contract instead of reworking it ad hoc.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

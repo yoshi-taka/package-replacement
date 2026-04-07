@@ -1,0 +1,43 @@
+{
+  "name": "chunk",
+  "slug": "chunk",
+  "status": "vendored",
+  "description": "The standalone lodash.chunk package as a vendorable file. Useful when you want a familiar chunking helper without another npm dependency.",
+  "tagline": "Split arrays into fixed-size groups.",
+  "sourcePackage": "lodash.chunk",
+  "sourceVersion": "4.2.0",
+  "sourcePublishedAt": "2016-08-13T17:37:13.498Z",
+  "sourceRef": "npm:lodash.chunk@4.2.0",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.chunk",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "chunk.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.chunk file in both raw and normalized forms. The value is to keep a known chunking helper local instead of rewriting it each time or adding another dependency.",
+  "nativeAlternative": "A small loop can chunk arrays, but vendoring the existing lodash helper is often simpler when you want to preserve current behavior and call sites.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

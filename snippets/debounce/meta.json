@@ -1,0 +1,44 @@
+{
+  "name": "debounce",
+  "slug": "debounce",
+  "status": "vendored",
+  "category": "Timing",
+  "description": "The standalone lodash.debounce package as a single vendorable file. Useful when you want the exact upstream behavior without installing the package into your app.",
+  "tagline": "Collapse rapid calls into one trailing invocation.",
+  "sourcePackage": "lodash.debounce",
+  "sourceVersion": "4.0.8",
+  "sourcePublishedAt": "2016-08-13T17:37:49.793Z",
+  "sourceRef": "npm:lodash.debounce@4.0.8",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.debounce",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "debounce.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page now ships the real upstream lodash.debounce distribution file. The value is not a new debounce implementation. The value is that you can inspect it, copy it, and keep that exact behavior in your repo.",
+  "nativeAlternative": "setTimeout and clearTimeout get you part of the way, but they do not give you the same contract around leading or trailing calls, maxWait, cancel, flush, argument retention, and this binding.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

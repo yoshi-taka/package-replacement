@@ -1,0 +1,6 @@
+{
+  "ignorePatterns": [
+    "dist/**",
+    "snippets/**/raw.js"
+  ]
+}

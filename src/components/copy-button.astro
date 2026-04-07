@@ -1,0 +1,31 @@
+---
+interface Props {
+  targetId: string;
+}
+
+const { targetId } = Astro.props;
+const buttonId = `copy-${targetId}`;
+---
+
+<button class="button primary" id={buttonId} type="button" data-copy-target={targetId}>
+  Copy code
+</button>
+
+<script>
+  document.querySelectorAll("[data-copy-target]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const targetId = button.getAttribute("data-copy-target");
+      const target = targetId ? document.getElementById(targetId) : null;
+      if (!target) return;
+
+      const text = target.textContent ?? "";
+      await navigator.clipboard.writeText(text);
+
+      const original = button.textContent;
+      button.textContent = "Copied";
+      window.setTimeout(() => {
+        button.textContent = original;
+      }, 1200);
+    });
+  });
+</script>

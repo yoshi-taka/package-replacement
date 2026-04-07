@@ -1,0 +1,44 @@
+{
+  "name": "set",
+  "slug": "set",
+  "status": "vendored",
+  "category": "Path",
+  "description": "The standalone lodash.set package as a vendorable file. Useful when you need lodash-style deep path assignment without pulling the package into your dependency graph.",
+  "tagline": "Write deep values into dynamic paths.",
+  "sourcePackage": "lodash.set",
+  "sourceVersion": "4.3.2",
+  "sourcePublishedAt": "2016-08-13T17:44:16.595Z",
+  "sourceRef": "npm:lodash.set@4.3.2",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.set",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "set.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.set file in both raw and normalized forms. The value is to preserve a known deep-assignment behavior locally instead of re-implementing it ad hoc.",
+  "nativeAlternative": "Direct assignment works for shallow cases, but dynamic string paths and intermediate object creation make lodash-style set semantics harder to replace safely.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

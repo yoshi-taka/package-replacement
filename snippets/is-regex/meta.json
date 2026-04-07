@@ -1,0 +1,53 @@
+{
+  "name": "isRegex",
+  "slug": "is-regex",
+  "status": "extracted",
+  "description": "A vendorable is-regex bundle based on the 1.1.3 package line, with has-symbols and call-bound logic folded into one file for Node.js and Bun use.",
+  "tagline": "Detect regular expressions across modern and legacy edge cases.",
+  "sourcePackage": "is-regex",
+  "sourceVersion": "1.1.3",
+  "sourcePublishedAt": "2021-05-08T05:36:02.186Z",
+  "sourceRef": "npm:is-regex@1.1.3",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/is-regex",
+  "repositoryUrl": "https://github.com/inspect-js/is-regex",
+  "suggestedFilename": "isRegex.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships an is-regex bundle based on the older package line, with helper logic folded into a single vendorable file. The value is to keep the package's detection contract local without a deeper helper graph.",
+  "nativeAlternative": "There is no direct native helper for the package's exact regexp-detection contract, especially around Symbol.toStringTag edge cases.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": [
+        "module.exports-to-export-default",
+        "js-extension-to-ts-extension",
+        "bundled-upstream-helper"
+      ],
+      "note": "Bundled into one file and then rule-based normalized for copy-paste into modern TS projects."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Single-file CommonJS bundle preserving the package's detection logic without external helper packages."
+    }
+  ],
+  "note": "Current is-regex releases pull in more helper packages. This snippet uses the 1.1.3 line as a simpler vendorable first pass.",
+  "supportLinks": [
+    {
+      "label": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/ljharb"
+    }
+  ]
+}

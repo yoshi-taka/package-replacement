@@ -1,0 +1,44 @@
+{
+  "name": "uniqBy",
+  "slug": "uniqby",
+  "status": "vendored",
+  "category": "Collection",
+  "description": "The standalone lodash.uniqby package as a vendorable file. Useful when you want lodash's iteratee-based uniqueness behavior without an npm dependency.",
+  "tagline": "Deduplicate values using an iteratee.",
+  "sourcePackage": "lodash.uniqby",
+  "sourceVersion": "4.7.0",
+  "sourcePublishedAt": "2016-08-13T17:46:46.042Z",
+  "sourceRef": "npm:lodash.uniqby@4.7.0",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.uniqby",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "uniqBy.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.uniqby file in both raw and normalized forms. The value is to preserve lodash's iteratee-driven uniqueness behavior inside your repo.",
+  "nativeAlternative": "Set can deduplicate primitive values, but iteratee-based uniqueness with stable ordering takes more care if you want lodash-compatible behavior.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

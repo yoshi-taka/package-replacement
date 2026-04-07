@@ -1,0 +1,44 @@
+{
+  "name": "isNil",
+  "slug": "isnil",
+  "status": "vendored",
+  "category": "Value",
+  "description": "The standalone lodash.isNil package as a vendorable file. Useful when you want the exact lodash null-or-undefined check without another dependency.",
+  "tagline": "Check whether a value is null or undefined.",
+  "sourcePackage": "lodash.isnil",
+  "sourceVersion": "4.0.0",
+  "sourcePublishedAt": "2016-01-13T11:05:47.913Z",
+  "sourceRef": "npm:lodash.isnil@4.0.0",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.isnil",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "isNil.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.isNil file in both raw and normalized forms. The value is to vendor a tiny but familiar check without changing existing calling code.",
+  "nativeAlternative": "A direct `value == null` check is short, but teams may still want to preserve the existing lodash utility contract in place.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

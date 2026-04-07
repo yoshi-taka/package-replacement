@@ -1,0 +1,51 @@
+{
+  "name": "objectKeys",
+  "slug": "object-keys",
+  "status": "extracted",
+  "description": "A source-faithful extracted bundle of object-keys and its local helpers. Useful when you want the classic Object.keys shim behavior locally without adding another dependency.",
+  "tagline": "Classic Object.keys shim in one vendorable file.",
+  "sourcePackage": "object-keys",
+  "sourceVersion": "1.1.1",
+  "sourcePublishedAt": "2019-04-07T02:30:18.674Z",
+  "sourceRef": "npm:object-keys@1.1.1",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/object-keys",
+  "repositoryUrl": "https://github.com/ljharb/object-keys",
+  "suggestedFilename": "objectKeys.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships an extracted object-keys bundle with its local helpers inlined. The value is to keep the old shim behavior local and inspectable without another npm dependency.",
+  "nativeAlternative": "Object.keys exists in modern runtimes, but some legacy or compatibility-heavy codebases still rely on the shim contract and its edge-case handling.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization after extraction. The extraction defines the raw bundle; normalization only changes the packaging shape."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Source-faithful extracted bundle from the published package, with local helper modules inlined and module boundaries removed."
+    }
+  ],
+  "sourceEntry": "index.js",
+  "extractedHelpersCount": 2,
+  "note": "This snippet is extracted rather than copied as-is because the published package entry depends on local helper files.",
+  "supportLinks": [
+    {
+      "label": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/ljharb"
+    }
+  ]
+}

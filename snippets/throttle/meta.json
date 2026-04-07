@@ -1,0 +1,44 @@
+{
+  "name": "throttle",
+  "slug": "throttle",
+  "status": "vendored",
+  "category": "Timing",
+  "description": "The standalone lodash.throttle package as a vendorable file. Useful when you want predictable throttling behavior without adding the package to your app dependency graph.",
+  "tagline": "Limit repeated calls to a steady rate.",
+  "sourcePackage": "lodash.throttle",
+  "sourceVersion": "4.1.1",
+  "sourcePublishedAt": "2016-08-13T17:45:38.195Z",
+  "sourceRef": "npm:lodash.throttle@4.1.1",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.throttle",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "throttle.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.throttle file in both raw and normalized forms. The goal is to vendor the known behavior into your repo, not to rewrite throttling from scratch.",
+  "nativeAlternative": "setTimeout or requestAnimationFrame can approximate throttling, but they do not automatically match lodash's contract around leading or trailing calls, cancel, flush, and retained arguments.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

@@ -1,0 +1,44 @@
+{
+  "name": "isEqual",
+  "slug": "isequal",
+  "status": "vendored",
+  "category": "Value",
+  "description": "The standalone lodash.isEqual package as a vendorable file. Useful when you need lodash's deep equality behavior without adding the package to your dependency graph.",
+  "tagline": "Compare values deeply with lodash semantics.",
+  "sourcePackage": "lodash.isequal",
+  "sourceVersion": "4.5.0",
+  "sourcePublishedAt": "2017-01-10T05:30:04.223Z",
+  "sourceRef": "npm:lodash.isequal@4.5.0",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.isequal",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "isEqual.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.isEqual file in both raw and normalized forms. The value is to vendor an existing deep-equality contract rather than improvise one.",
+  "nativeAlternative": "Object.is and direct comparison are insufficient for deep equality, and custom deep-equal helpers often diverge subtly from lodash behavior.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

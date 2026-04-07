@@ -1,0 +1,44 @@
+{
+  "name": "once",
+  "slug": "once",
+  "status": "vendored",
+  "category": "Timing",
+  "description": "The standalone lodash.once package as a vendorable file. Useful when you want a small but exact once-only invocation contract without another dependency.",
+  "tagline": "Run a function once and reuse the result.",
+  "sourcePackage": "lodash.once",
+  "sourceVersion": "4.1.1",
+  "sourcePublishedAt": "2016-08-13T17:42:47.106Z",
+  "sourceRef": "npm:lodash.once@4.1.1",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.once",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "once.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.once file in both raw and normalized forms. The point is to vendor the exact one-time invocation behavior instead of rewriting it case by case.",
+  "nativeAlternative": "A closure can implement a one-time call quickly, but teams often still prefer keeping a known utility contract instead of rewriting it repeatedly.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

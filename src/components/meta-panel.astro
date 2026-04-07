@@ -1,0 +1,152 @@
+---
+import type { SnippetMeta } from "@/types/snippet";
+
+interface Props {
+    meta: SnippetMeta;
+}
+
+const { meta } = Astro.props;
+const publishedAt = meta.sourcePublishedAt
+    ? new Intl.DateTimeFormat("en-US", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+      }).format(new Date(meta.sourcePublishedAt))
+    : null;
+---
+
+<aside class="card" style="padding: 22px;">
+    <div style="display:grid; gap:14px;">
+        <div>
+            <div
+                class="muted"
+                style="font-size:0.82rem; text-transform:uppercase; letter-spacing:0.08em;"
+            >
+                Meta
+            </div>
+            <h3 style="margin:8px 0 0; font-size:1.2rem;">{meta.name}</h3>
+        </div>
+        <div>
+            <div class="muted">Status</div>
+            <div>{meta.status}</div>
+        </div>
+        <div>
+            <div class="muted">Source package</div>
+            <div>{meta.sourcePackage}</div>
+        </div>
+        <div>
+            <div class="muted">Version</div>
+            <div>{meta.sourceVersion}</div>
+            {
+                publishedAt && (
+                    <div class="muted" style="margin-top:6px; font-size:0.85rem;">
+                        Published {publishedAt}
+                    </div>
+                )
+            }
+        </div>
+        <div>
+            <div class="muted">Source ref</div>
+            <div><code>{meta.sourceRef}</code></div>
+        </div>
+        <div>
+            <div class="muted">License</div>
+            <div>{meta.license}</div>
+            <div class="muted" style="margin-top:6px; font-size:0.85rem; line-height:1.5;">
+                Copying source into your repo may require preserving license and
+                attribution notices.
+            </div>
+        </div>
+        <div>
+            <div class="muted">Suggested filename</div>
+            <div><code>{meta.suggestedFilename}</code></div>
+        </div>
+        <div>
+            <div class="muted">Variants</div>
+            <div>
+                {meta.variants.map((variant) => variant.label).join(" / ")}
+            </div>
+        </div>
+        {
+            meta.sourceEntry && (
+                <div>
+                    <div class="muted">Source entry</div>
+                    <div>
+                        <code>{meta.sourceEntry}</code>
+                    </div>
+                </div>
+            )
+        }
+        {
+            (meta.extractedHelpers || meta.extractedHelpersCount) && (
+                <div>
+                    <div class="muted">Extracted helpers</div>
+                    <div>
+                        {meta.extractedHelpersCount ??
+                            meta.extractedHelpers?.length}
+                    </div>
+                </div>
+            )
+        }
+        <div>
+            <div class="muted">Copied at</div>
+            <div>{meta.copiedAt}</div>
+            <div class="muted" style="margin-top:6px; font-size:0.85rem; line-height:1.5;">
+                This copy does not receive upstream updates automatically.
+            </div>
+        </div>
+        <div>
+            <div class="muted">Published package</div>
+            {
+                meta.publishedUrl ? (
+                    <a
+                        href={meta.publishedUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        style="text-decoration:underline;"
+                    >
+                        Open package
+                    </a>
+                ) : (
+                    <span class="muted">Not linked yet</span>
+                )
+            }
+        </div>
+        {
+            meta.supportLinks && meta.supportLinks.length > 0 && (
+                <div>
+                    <div class="muted">Support upstream</div>
+                    <div style="display:grid; gap:8px;">
+                        {meta.supportLinks.map((link) => (
+                            <a
+                                href={link.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                style="text-decoration:underline;"
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            )
+        }
+        <div>
+            <div class="muted">Repository</div>
+            {
+                meta.repositoryUrl ? (
+                    <a
+                        href={meta.repositoryUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        style="text-decoration:underline;"
+                    >
+                        Open repository
+                    </a>
+                ) : (
+                    <span class="muted">Not linked yet</span>
+                )
+            }
+        </div>
+    </div>
+</aside>

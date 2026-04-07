@@ -1,0 +1,45 @@
+{
+  "name": "has (from lodash)",
+  "slug": "has-lodash",
+  "status": "extracted",
+  "description": "A source-faithful extracted bundle of lodash's has method and its required helpers, cut from the full lodash package instead of the standalone lodash.has package.",
+  "tagline": "Extract lodash has from the monolith with helpers included.",
+  "sourcePackage": "lodash",
+  "sourceVersion": "4.17.21",
+  "sourcePublishedAt": "2021-02-20T15:42:16.891Z",
+  "sourceRef": "npm:lodash@4.17.21",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "has.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships an extracted bundle from the full lodash package. The point is not to use the modular lodash.has package, but to prove that path-existence checks can be cut out of the monolith with their helper chain intact.",
+  "nativeAlternative": "Direct property checks work for shallow cases, but dynamic paths and lodash-style semantics make a reusable extracted helper more attractive.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization after extraction. The extraction defines the raw bundle; normalization only changes the packaging shape."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Source-faithful extracted bundle from the lodash package, with local helper modules inlined and module boundaries removed."
+    }
+  ],
+  "sourceEntry": "has.js",
+  "extractedHelpersCount": 56,
+  "note": "This snippet is a monolith extraction experiment. It differs from the modular lodash.has package because the raw source is assembled from the full lodash package's internal module graph."
+}

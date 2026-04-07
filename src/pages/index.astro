@@ -1,0 +1,173 @@
+---
+import SiteLayout from "@/layouts/site-layout.astro";
+import { getAllSnippets } from "@/lib/snippets";
+
+const snippets = await getAllSnippets();
+---
+
+<SiteLayout
+    title="Package Replacement"
+    description="Copy useful package behavior into your repo."
+>
+    <section class="card" style="padding: 28px; margin-bottom: 28px;">
+        <div class="eyebrow">A copy-paste registry for npm dependencies.</div>
+        <div style="display:grid; gap:20px; margin-top:20px;">
+            <div style="display:grid; gap:12px;">
+                <h1
+                    style="margin:0; font-size:clamp(2.5rem, 6vw, 5.4rem); line-height:0.95;"
+                >
+                    Preserve behavior, not packages.
+                </h1>
+                <p
+                    class="muted"
+                    style="margin:0; max-width: 44rem; font-size:1.06rem; line-height:1.7;"
+                >
+                    Replace small package installs with copyable source you can read,
+                    vendor, and keep under your own control.
+                </p>
+                <p
+                    class="muted"
+                    style="margin:0; max-width: 44rem; font-size:0.98rem; line-height:1.75;"
+                >
+                    Packages are great for distribution. Snippets are great for
+                    understanding and control. This project focuses on the latter.
+                </p>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:12px;">
+                <a class="button primary" href="#catalog">Browse snippets</a>
+                <span class="eyebrow">{snippets.length} snippets</span>
+            </div>
+        </div>
+    </section>
+
+    <section
+        class="grid"
+        style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 28px;"
+    >
+        <div
+            style="padding:0 6px 0 0; display:grid; gap:12px; border-top:1px solid var(--line); padding-top:18px;"
+        >
+            <div
+                class="muted"
+                style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.12em;"
+            >
+                What This Is
+            </div>
+            <p style="margin:0; line-height:1.7;">
+                A curated registry of copyable package behavior. Each snippet is shown as
+                <code>raw</code> and, when useful, a <code>normalized</code> variant for
+                Node.js and Bun projects.
+            </p>
+        </div>
+        <div
+            style="padding:0 6px 0 0; display:grid; gap:12px; border-top:1px solid var(--line); padding-top:18px;"
+        >
+            <div
+                class="muted"
+                style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.12em;"
+            >
+                What This Is Not
+            </div>
+            <p style="margin:0; line-height:1.7;">
+                Not a promise of universal compatibility, not a security guarantee, and
+                not a mirror of all npm packages. This is a selective, vendor-first
+                catalog.
+            </p>
+        </div>
+        <div
+            style="padding:0 6px 0 0; display:grid; gap:12px; border-top:1px solid var(--line); padding-top:18px;"
+        >
+            <div
+                class="muted"
+                style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.12em;"
+            >
+                Curation
+            </div>
+            <p style="margin:0; line-height:1.7;">
+                We include small packages and narrow package slices that are easy
+                to read, copy, and test. Security-sensitive packages only appear
+                as tightly scoped snippets, not full libraries.
+            </p>
+        </div>
+    </section>
+
+    <section
+        class="grid"
+        style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 28px;"
+    >
+        <div
+            style="padding:0 6px 0 0; display:grid; gap:12px; border-top:1px solid var(--line); padding-top:18px;"
+        >
+            <div
+                class="muted"
+                style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.12em;"
+            >
+                When Snippets Fit
+            </div>
+            <p style="margin:0; line-height:1.7;">
+                Use snippets when you want a smaller dependency graph, local code
+                ownership, easier auditing, or a deterministic copy of behavior
+                already used in your repo.
+            </p>
+        </div>
+        <div
+            style="padding:0 6px 0 0; display:grid; gap:12px; border-top:1px solid var(--line); padding-top:18px;"
+        >
+            <div
+                class="muted"
+                style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.12em;"
+            >
+                When Packages Fit
+            </div>
+            <p style="margin:0; line-height:1.7;">
+                Use packages when you need active maintenance, broader abstraction,
+                automatic security updates, or behavior that should keep tracking
+                upstream over time.
+            </p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 28px;">
+        <p class="muted" style="margin:0; max-width: 52rem; line-height:1.8;">
+            Once you copy code into your repo, maintenance, license notices,
+            and attribution are your responsibility.
+        </p>
+        <p class="muted" style="margin:8px 0 0; max-width: 52rem; line-height:1.8;">
+            Copied snippets do not automatically receive upstream bug fixes or
+            security updates, and vendored code can become outdated over time.
+        </p>
+    </section>
+
+    <section
+        id="catalog"
+        class="grid"
+        style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));"
+    >
+        {
+            snippets.map((snippet) => (
+                <a
+                    class="card"
+                    href={`/s/${snippet.slug}`}
+                    style="padding:22px; display:grid; gap:14px;"
+                >
+                    <div style="display:flex; justify-content:space-between; gap:10px; align-items:start;">
+                        <div>
+                            <div
+                                class="muted"
+                                style="font-size:0.82rem; text-transform:uppercase; letter-spacing:0.08em;"
+                            >
+                                {snippet.sourcePackage}
+                            </div>
+                            <h2 style="margin:6px 0 0; font-size:1.5rem;">
+                                {snippet.name}
+                            </h2>
+                        </div>
+                        <div class="eyebrow">{snippet.license}</div>
+                    </div>
+                    <p style="margin:0; line-height:1.65;">{snippet.tagline}</p>
+                    <div class="muted" style="line-height:1.6;">raw + normalized</div>
+                </a>
+            ))
+        }
+    </section>
+</SiteLayout>

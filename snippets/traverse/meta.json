@@ -1,0 +1,49 @@
+{
+  "name": "traverse",
+  "slug": "traverse",
+  "status": "vendored",
+  "description": "The published traverse package as a vendorable file, using the last dependency-free release. Useful when you want the classic recursive object walker locally without pulling in a deeper modern dependency graph first.",
+  "tagline": "Walk, map, clone, and edit nested objects recursively.",
+  "sourcePackage": "traverse",
+  "sourceVersion": "0.6.8",
+  "sourcePublishedAt": "2023-12-20T23:55:50.353Z",
+  "sourceRef": "npm:traverse@0.6.8",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/traverse",
+  "repositoryUrl": "https://github.com/ljharb/js-traverse",
+  "suggestedFilename": "traverse.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published traverse 0.6.8 file in both raw and normalized forms. The value is to keep a classic recursive walker local and inspectable without starting with the newer dependency-heavy release line.",
+  "nativeAlternative": "There is no direct native replacement for traverse; teams typically end up rewriting custom recursive walkers, maps, and clone helpers ad hoc.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is from the last dependency-free release line."
+    }
+  ],
+  "note": "Current traverse releases pull in deeper external dependencies. This snippet intentionally uses 0.6.8 as a simpler first-pass vendorable target.",
+  "supportLinks": [
+    {
+      "label": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/ljharb"
+    }
+  ]
+}

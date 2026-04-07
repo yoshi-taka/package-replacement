@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": ["dist/**", "snippets/**/raw.js"],
+  "overrides": [
+    {
+      "files": ["snippets/**/normalized.ts"],
+      "rules": {
+        "typescript/no-this-alias": "off",
+        "no-unused-vars": "off",
+        "no-unused-expressions": "off",
+        "no-sparse-arrays": "off"
+      }
+    }
+  ]
+}

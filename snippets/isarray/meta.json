@@ -1,0 +1,43 @@
+{
+  "name": "isarray",
+  "slug": "isarray",
+  "status": "vendored",
+  "description": "The published isarray package as a vendorable file. Useful when you want the exact tiny fallback package behavior locally without keeping the npm dependency.",
+  "tagline": "Fallback Array.isArray in one tiny file.",
+  "sourcePackage": "isarray",
+  "sourceVersion": "2.0.5",
+  "sourcePublishedAt": "2019-07-08T13:21:22.377Z",
+  "sourceRef": "npm:isarray@2.0.5",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/isarray",
+  "repositoryUrl": "https://github.com/juliangruber/isarray",
+  "suggestedFilename": "isArray.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published isarray file in both raw and normalized forms. The value is not novelty; it is to keep an old but still sticky compatibility helper local and inspectable.",
+  "nativeAlternative": "Array.isArray exists in modern runtimes, but some old codebases still carry this helper and may prefer to vendor the exact package behavior during cleanup.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

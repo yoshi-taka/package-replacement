@@ -1,0 +1,44 @@
+{
+  "name": "noop",
+  "slug": "noop",
+  "status": "vendored",
+  "category": "Function",
+  "description": "The standalone lodash.noop package as a vendorable file. Useful when you want a named no-op helper without adding a dependency.",
+  "tagline": "A function that intentionally does nothing.",
+  "sourcePackage": "lodash.noop",
+  "sourceVersion": "3.0.1",
+  "sourcePublishedAt": "2016-01-30T08:49:28.446Z",
+  "sourceRef": "npm:lodash.noop@3.0.1",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.noop",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "noop.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.noop file in both raw and normalized forms. The value is to preserve a familiar tiny helper locally when existing code already expects it.",
+  "nativeAlternative": "An empty arrow function is trivial to write, but vendoring the known helper can still be useful when replacing an existing dependency.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}

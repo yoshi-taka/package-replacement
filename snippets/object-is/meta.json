@@ -1,0 +1,54 @@
+{
+  "name": "objectIs",
+  "slug": "object-is",
+  "status": "extracted",
+  "description": "A vendorable Object.is polyfill bundle based on the dependency-free object-is 1.1.0 release. Useful when you want the classic shim behavior locally without pulling in newer helper packages.",
+  "tagline": "Object.is shim with SameValue semantics.",
+  "sourcePackage": "object-is",
+  "sourceVersion": "1.1.0",
+  "sourcePublishedAt": "2020-04-14T16:08:06.579Z",
+  "sourceRef": "npm:object-is@1.1.0",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/object-is",
+  "repositoryUrl": "https://github.com/es-shims/object-is",
+  "suggestedFilename": "objectIs.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships an Object.is polyfill bundle based on the old dependency-free release line. The value is to keep SameValue semantics local and inspectable without carrying the newer helper graph.",
+  "nativeAlternative": "Object.is exists in modern runtimes, but old compatibility layers and cleanup work may still want a vendorable shim with the familiar export shape.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": [
+        "module.exports-to-export-default",
+        "js-extension-to-ts-extension",
+        "bundled-upstream-helper"
+      ],
+      "note": "Bundled from the dependency-free release line, then rule-based normalized for copy-paste into modern TS projects."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Single-file CommonJS bundle preserving the package's polyfill export shape."
+    }
+  ],
+  "sourceEntry": "index.js",
+  "note": "Current object-is releases pull in helper packages. This snippet intentionally uses the simpler 1.1.0 release line as a vendorable first pass.",
+  "supportLinks": [
+    {
+      "label": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/ljharb"
+    }
+  ]
+}

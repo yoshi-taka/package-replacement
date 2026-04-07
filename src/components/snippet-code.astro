@@ -1,0 +1,231 @@
+---
+import type { SnippetVariant } from "@/types/snippet";
+import CopyButton from "@/components/copy-button.astro";
+
+interface Props {
+    variants: SnippetVariant[];
+    defaultVariant: string;
+    codeIdPrefix?: string;
+}
+
+const { variants, defaultVariant, codeIdPrefix = "snippet-code" } = Astro.props;
+---
+
+<section class="card" style="overflow:hidden;">
+    <div
+        style="display:grid; gap:14px; padding:18px 20px; border-bottom:1px solid var(--line);"
+    >
+        <div
+            style="display:flex; justify-content:space-between; align-items:center; gap:16px;"
+        >
+            <div>
+                <div
+                    class="muted"
+                    style="font-size:0.82rem; text-transform:uppercase; letter-spacing:0.08em;"
+                >
+                    Snippet
+                </div>
+                <div style="font-size:1.15rem;">Copy-first distribution</div>
+            </div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            {
+                variants.map((variant) => (
+                    <div
+                        class="variant-tab-wrap"
+                        style="display:flex; align-items:center; gap:8px; position:relative;"
+                    >
+                        <button
+                            class={`button${variant.id === defaultVariant ? " primary" : ""}`}
+                            type="button"
+                            data-variant-tab={variant.id}
+                            data-code-prefix={codeIdPrefix}
+                        >
+                            {variant.label}
+                        </button>
+                        <button
+                            class="variant-info"
+                            type="button"
+                            data-variant-info
+                            aria-label={variant.id === "raw"
+                                ? "Raw keeps the published package shape as-is."
+                                : "Normalized is a project-specific, rule-based variant for easier Node.js and Bun copy-paste use. It is not an official upstream distribution."}
+                            aria-expanded="false"
+                        >
+                            ?
+                        </button>
+                        <div class="variant-tooltip" role="tooltip" data-variant-tooltip>
+                            {variant.id === "raw"
+                                ? "Keeps the published package shape as-is."
+                                : "Project-specific, rule-based variant for easier Node.js and Bun copy-paste use. Not an official upstream distribution."}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    {
+        variants.map((variant) => {
+            const codeId = `${codeIdPrefix}-${variant.id}`;
+            const visible = variant.id === defaultVariant;
+
+            return (
+                <div
+                    data-variant-panel={variant.id}
+                    data-code-prefix={codeIdPrefix}
+                    style={`display:${visible ? "block" : "none"};`}
+                >
+                    <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:14px 20px; border-bottom:1px solid var(--line); background:rgba(255,255,255,0.35);">
+                        <div style="display:grid; gap:4px;">
+                            <div>
+                                <strong>{variant.label}</strong>
+                            </div>
+                            <div class="muted" style="font-size:0.92rem;">
+                                {variant.moduleFormat.toUpperCase()} /{" "}
+                                {variant.language.toUpperCase()} /{" "}
+                                {variant.distributionKind}
+                            </div>
+                            {variant.runtimeTargets && (
+                                <div class="muted" style="font-size:0.85rem;">
+                                    Runtime: {variant.runtimeTargets.join(", ")}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                    <div style="display:flex; justify-content:flex-end; padding:12px 20px; border-bottom:1px solid var(--line); background:rgba(255,255,255,0.2);">
+                        <CopyButton targetId={codeId} />
+                    </div>
+                    <pre
+                        id={codeId}
+                        set:text={variant.code}
+                        style="margin:0; padding:20px; overflow:auto; font-size:0.92rem; line-height:1.65; background:#1d1a17; color:#f8f1e7;"
+                    />
+                    {variant.note && (
+                        <div style="padding:12px 20px; border-top:1px solid var(--line); background:rgba(255,255,255,0.28); line-height:1.6;">
+                            <span class="muted">Variant note:</span>{" "}
+                            {variant.note}
+                        </div>
+                    )}
+                    {variant.normalizations &&
+                        variant.normalizations.length > 0 && (
+                            <div style="padding:12px 20px; border-top:1px solid var(--line); background:rgba(255,255,255,0.22); line-height:1.6;">
+                                <span class="muted">Transforms:</span>{" "}
+                                {variant.normalizations.join(", ")}
+                            </div>
+                        )}
+                    {variant.distributionKind === "normalized" && (
+                        <div style="padding:12px 20px; border-top:1px solid var(--line); background:rgba(255,255,255,0.18); line-height:1.6;">
+                            <span class="muted">Validation:</span> This
+                            normalized variant is intended to stay oxlint and
+                            oxfmt clean in this repo.
+                        </div>
+                    )}
+                </div>
+            );
+        })
+    }
+</section>
+
+<style>
+    .variant-info {
+        appearance: none;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.55);
+        color: var(--muted);
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        font: inherit;
+        font-size: 0.82rem;
+        line-height: 1;
+        cursor: help;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .variant-tooltip {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        width: min(280px, 70vw);
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: var(--surface-strong);
+        box-shadow: var(--shadow);
+        color: var(--ink);
+        font-size: 0.88rem;
+        line-height: 1.55;
+        z-index: 20;
+        display: none;
+    }
+
+    .variant-tab-wrap[data-tooltip-open="true"] .variant-tooltip {
+        display: block;
+    }
+</style>
+
+<script>
+    document.querySelectorAll("[data-variant-info]").forEach((button) => {
+        button.addEventListener("click", (event) => {
+            event.stopPropagation();
+
+            const wrap = button.closest(".variant-tab-wrap");
+            if (!wrap) return;
+
+            const isOpen = wrap.getAttribute("data-tooltip-open") === "true";
+
+            document.querySelectorAll(".variant-tab-wrap[data-tooltip-open='true']").forEach((node) => {
+                node.setAttribute("data-tooltip-open", "false");
+                const info = node.querySelector("[data-variant-info]");
+                if (info) {
+                    info.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            if (!isOpen) {
+                wrap.setAttribute("data-tooltip-open", "true");
+                button.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
+
+    document.addEventListener("click", () => {
+        document.querySelectorAll(".variant-tab-wrap[data-tooltip-open='true']").forEach((node) => {
+            node.setAttribute("data-tooltip-open", "false");
+            const info = node.querySelector("[data-variant-info]");
+            if (info) {
+                info.setAttribute("aria-expanded", "false");
+            }
+        });
+    });
+
+    document.querySelectorAll("[data-variant-tab]").forEach((button) => {
+        button.addEventListener("click", () => {
+            const variantId = button.getAttribute("data-variant-tab");
+            const prefix = button.getAttribute("data-code-prefix");
+            if (!variantId || !prefix) return;
+
+            document
+                .querySelectorAll(
+                    `[data-code-prefix="${prefix}"][data-variant-tab]`,
+                )
+                .forEach((tab) => {
+                    tab.classList.remove("primary");
+                });
+            button.classList.add("primary");
+
+            document
+                .querySelectorAll(
+                    `[data-code-prefix="${prefix}"][data-variant-panel]`,
+                )
+                .forEach((panel) => {
+                    const isActive =
+                        panel.getAttribute("data-variant-panel") === variantId;
+                    panel.style.display = isActive ? "block" : "none";
+                });
+        });
+    });
+</script>

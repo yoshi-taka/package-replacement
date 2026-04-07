@@ -1,0 +1,43 @@
+{
+  "name": "keyBy",
+  "slug": "keyby",
+  "status": "vendored",
+  "description": "The standalone lodash.keyby package as a vendorable file. Useful when you want lodash's keying behavior without another npm dependency.",
+  "tagline": "Index items by an iteratee result.",
+  "sourcePackage": "lodash.keyby",
+  "sourceVersion": "4.6.0",
+  "sourcePublishedAt": "2016-08-13T17:41:32.999Z",
+  "sourceRef": "npm:lodash.keyby@4.6.0",
+  "license": "MIT",
+  "publishedUrl": "https://www.npmjs.com/package/lodash.keyby",
+  "repositoryUrl": "https://github.com/lodash/lodash",
+  "suggestedFilename": "keyBy.ts",
+  "copiedAt": "2026-04-04",
+  "summary": "This page ships the published lodash.keyby file in both raw and normalized forms. The value is to keep a known keying contract local instead of re-implementing ad hoc reducers in each repo.",
+  "nativeAlternative": "A reduce-based object builder is close, but teams may still want the exact lodash keyBy behavior they already rely on.",
+  "defaultVariant": "normalized",
+  "variants": [
+    {
+      "id": "normalized",
+      "label": "Normalized",
+      "file": "normalized.ts",
+      "moduleFormat": "esm",
+      "language": "ts",
+      "distributionKind": "normalized",
+      "runtimeTargets": ["node", "bun"],
+      "normalizations": ["module.exports-to-export-default", "js-extension-to-ts-extension"],
+      "note": "Rule-based normalization for modern TS projects. The goal is easier import and build compatibility, not changed behavior."
+    },
+    {
+      "id": "raw",
+      "label": "Raw",
+      "file": "raw.js",
+      "moduleFormat": "cjs",
+      "language": "js",
+      "distributionKind": "raw",
+      "runtimeTargets": ["node", "bun"],
+      "note": "Published package file kept as-is for older teams or repos that still prefer the original CommonJS distribution."
+    }
+  ],
+  "note": "Raw and normalized views are both available. Use normalized when you want an ESM and TypeScript-friendly file, and raw when you want the original published package shape."
+}
