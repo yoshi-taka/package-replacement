@@ -214,6 +214,14 @@ The current setup is intentionally minimal and static-only.
 For Cloudflare-hosted builds, set `BUN_VERSION=latest` in the Cloudflare build
 environment unless you decide to pin Bun explicitly later.
 
+In practice, setting `BUN_VERSION` only affects Bun availability and version.
+It does not automatically switch the install phase to `bun install`.
+
+For this repo, prefer explicit Cloudflare build settings:
+
+- install command: `bun install`
+- build command: `bun run build`
+
 ## Status
 
 This is an MVP exploration.
